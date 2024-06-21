@@ -7,7 +7,7 @@ function Products({cart, increaseQuantity, decreaseQuantity}) {
 
   console.log(useWindowSize());
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products").then(
+    fetch("https://api.escuelajs.co/api/v1/products").then(
       (response) => {
         return response.json();
       }
