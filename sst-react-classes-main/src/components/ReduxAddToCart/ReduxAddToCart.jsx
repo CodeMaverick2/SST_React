@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 function ReduxAddToCart({ product }) {
-    console.log("add to cart", product.id);
+    console.log("add to cart", product.id,product.title,product.price);
     // useSelector
     let dispatch = useDispatch();
     function increase() {
