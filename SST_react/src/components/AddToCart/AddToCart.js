@@ -25,7 +25,7 @@ function AddToCart({product}){
         return(
             <div>
                 <button onClick={decrease}>-</button>
-                <span style={{ color: 'black', padding: 0 }}>Quantity - {quantity}</span>
+                <span style={{ color: 'black', padding: 0 }}>{quantity}</span>
                 <button onClick={increase}>+</button>
             </div>
             

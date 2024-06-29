@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import Products from './components/Product/Products.js';
-// import {b} from './Products';
 import Effect from './components/Effect/Effect.js';
 import NavBar from './components/Portfolio/NavBar/NavBar.js';
 import TypeWriter from './components/Portfolio/TypeWriter/TypeWriter.js';
@@ -11,7 +10,7 @@ import ProgressBar from './components/Portfolio/ProgressBar/ProgressBar.jsx';
 import { useState, useEffect } from 'react';
 import { renderToString } from 'react-dom/server';
 import CartContext from './context/CartContext.js';
-
+import Cart from './components/Cart/Cart.js';
 
 function App() {
   // console.log(b);
@@ -57,6 +56,7 @@ function App() {
     <CartContext.Provider value={{cart,increaseQuantity,decreaseQuantity}}>
         <div className="App">
           <Products />
+          <Cart />
         </div>
     </CartContext.Provider>
   );
