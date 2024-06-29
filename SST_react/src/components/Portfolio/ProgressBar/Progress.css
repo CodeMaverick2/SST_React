@@ -1,0 +1,27 @@
+.Progress-Bar{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.progress{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    transition: width 1s ease-in;
+}
+span{
+    color: white;
+    padding-left: 2em;
+}
+.Progress{
+    height: 2em;
+    width: 45em;
+    border-radius: 25px;
+    border: 4px black solid;
+}

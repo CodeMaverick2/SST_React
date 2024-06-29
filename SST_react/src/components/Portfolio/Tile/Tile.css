@@ -1,0 +1,20 @@
+.tile{
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+.tile.img-right{
+    flex-direction: row-reverse;
+}
+.tile:hover{
+    flex-direction: row;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
