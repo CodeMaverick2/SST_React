@@ -18,14 +18,18 @@ app.post('/courses', (req, res) => {
     res.send(courses);
 });
 
-app.put('/courses', (req, res) => {
-    const courseId = parseInt(req.body.id);
-    const updatedData = req.body;
+app.put('/courses/:id', (req, res) => {
+    try{
+        let singleCourse = courses.find(course => course.id === ++req.params.id);
+        if(singleCourse){
+            res.status(404).send('Course does not exist');
+        }
+        singleCourse.name = req.body.name;
+        res.send(singleCourse);
+    }catch(err){
+        res.status(500).send(err);
+    }
 
-    const course = courses.find(c => c.id === courseId);
-    course.name = updatedData.name || course.name;
-
-    res.json({ data: course });
 });
 
 app.delete('/courses', (req, res) => {
