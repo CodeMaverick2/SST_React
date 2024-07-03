@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-
+app.use(middleware);
+app.use(logger);
 let courses = [
     {id:1, name: "java"},
     {id:2, name: "javascript"},
@@ -41,6 +42,19 @@ app.delete('/courses', (req, res) => {
 
     res.json({ data: courses });
 });
+
+function middleware(req, res, next) {
+    console.log("called middleware");
+    next();
+}
+function logger(req, res, next) {
+    const method = req.method;
+    const ip = req.ip;
+    const hostname = req.hostname;
+    const date = new Date().toISOString();
+    console.log(`${method} request from ${ip}  hostname: ${hostname} at Date : ${date} `);
+    next();
+}
 const PORT = 3000;
 app.listen(PORT, () => {app.put('/courses', (req, res) => {
     courses = courses.map(course => {
